@@ -24,4 +24,31 @@ Since environment variables are set in the OS context and are meant to
 be accessible by programs from any programming language, the obtained
 variable can only be a str. This can them be type casted after retrieving
 the env variable inside the Python code.
+
+
+Virtual Environments
+
+It's a good practice to use virtual environments for every python project. This helps
+to isolate the project-specific dependencies and prevents them from messing with the
+global versions.
+
+You can create virtual environments in your project directory using the builting venv
+module: `$ python -m venv .myenv`
+Or using the virtualenv package: `$ virtualenv myvenv`
+
+Then activate it: `$ .myenv/bin/activate` or `$ myenv/bin/activate`
+
+You can confirm the activation by: `$ which python`
+
+After this, you then upgrade pip, create a .gitignore, and install the project requirements.
+
+`$ python -m pip install --upgrade pip`
+`$ echo "*" > .venv/.gitignore`
+`$ pip install -r requirements.txt`
+
+You can install FastAPI directly from the terminal or add it to requirements.txt and
+install all dependencies together (Preferrable).
+`$ pip install fastapi[standard]`
+
+To deactivate the virtual environement: `$ deactivate`
 """
