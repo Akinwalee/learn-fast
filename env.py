@@ -36,7 +36,7 @@ You can create virtual environments in your project directory using the builting
 module: `$ python -m venv .myenv`
 Or using the virtualenv package: `$ virtualenv myvenv`
 
-Then activate it: `$ .myenv/bin/activate` or `$ myenv/bin/activate`
+Then activate it: `$ source .myenv/bin/activate` or `$ source myenv/bin/activate`
 
 You can confirm the activation by: `$ which python`
 
@@ -48,7 +48,14 @@ After this, you then upgrade pip, create a .gitignore, and install the project r
 
 You can install FastAPI directly from the terminal or add it to requirements.txt and
 install all dependencies together (Preferrable).
-`$ pip install fastapi[standard]`
+`$ pip install fastapi[standard]` --> Intalls fastapi alongside some optional dependencies
+ or simply:
+ `$ pip install fastapi[standard]`
 
 To deactivate the virtual environement: `$ deactivate`
+
+Running FastAPI App
+
+To run a FastAPI app in a file main.py, we do:
+`$ fastapi dev main.py`
 """
